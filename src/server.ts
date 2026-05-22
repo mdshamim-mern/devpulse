@@ -1,3 +1,4 @@
+// Main server entry point
 import app from './app';
 import config from './config';
 import { initDB } from './db';
