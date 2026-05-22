@@ -1,3 +1,4 @@
+// Controller logic for issue management
 import { Request, Response, NextFunction } from 'express';
 import { issueService, IIssuePayload } from './issue.service';
 import sendResponse from '../../utils/sendResponse';
