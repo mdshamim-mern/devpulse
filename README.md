@@ -3,7 +3,7 @@
 DevPulse is a robust backend API built for tracking issues, bugs, and feature requests. It includes secure role-based authentication, allowing contributors to create issues and maintainers to manage and resolve them.
 
 ## 🚀 Live URL
-**[Insert Your Vercel Live Link Here]** *(আমরা Vercel এ ডেপ্লয় করার পর এখানে লিংক বসাবো)*
+https://devpulse-six-ashen.vercel.app
 
 ## ✨ Features
 - **User Authentication:** Secure JWT-based login and signup.
