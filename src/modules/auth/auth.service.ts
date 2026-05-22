@@ -1,3 +1,4 @@
+// Handles user registration and JWT token generation
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { pool } from '../../db';
