@@ -1,3 +1,4 @@
+// Express application setup and global middleware
 import express from 'express';
 import cors from 'cors';
 import { authRoutes } from './modules/auth/auth.route';
