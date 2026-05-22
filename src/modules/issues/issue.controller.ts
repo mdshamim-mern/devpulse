@@ -3,7 +3,6 @@ import { Request, Response, NextFunction } from 'express';
 import { issueService, IIssuePayload } from './issue.service';
 import sendResponse from '../../utils/sendResponse';
 
-
 interface CustomRequest extends Request {
   user?: {
     id: number;
@@ -22,30 +21,28 @@ const createIssue = async (req: Request, res: Response, next: NextFunction) => {
 
 const getAllIssues = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const result = await issueService.getAllIssues(req.query);
+    const result = await issueService.getAllIssues();
     sendResponse(res, { statusCode: 200, success: true, message: 'Issues retrieved successfully', data: result });
   } catch (error) { next(error); }
 };
 
 const getSingleIssue = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    
-    const result = await issueService.getSingleIssue(req.params.id as string);
+    const result = await issueService.getIssueById(Number(req.params.id));
     sendResponse(res, { statusCode: 200, success: true, message: 'Issue retrieved successfully', data: result });
   } catch (error) { next(error); }
 };
 
 const updateIssue = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const customReq = req as CustomRequest; 
-    const result = await issueService.updateIssue(req.params.id as string, req.body, customReq.user!);
+    const result = await issueService.updateIssue(Number(req.params.id), req.body);
     sendResponse(res, { statusCode: 200, success: true, message: 'Issue updated successfully', data: result });
   } catch (error) { next(error); }
 };
 
 const deleteIssue = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    await issueService.deleteIssue(req.params.id as string);
+    await issueService.deleteIssue(Number(req.params.id));
     res.status(200).json({ success: true, message: 'Issue deleted successfully' });
   } catch (error) { next(error); }
 };
