@@ -1,3 +1,4 @@
+// Business logic and database operations for issues
 import { pool } from '../../db';
 
 export interface IIssuePayload {
