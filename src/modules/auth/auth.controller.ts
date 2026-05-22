@@ -1,3 +1,4 @@
+// Controller for user authentication and login
 import { Request, Response, NextFunction } from 'express';
 import { authService, ISignupPayload, ILoginPayload } from './auth.service';
 import sendResponse from '../../utils/sendResponse';
